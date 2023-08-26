@@ -29,7 +29,7 @@ const links = [
 interface LinkProps {
   url: string,
   children: React.ReactNode,
-};
+}
 
 const Link = ({ url, children }: LinkProps) => (
   <a href={url} className="decoration-2 underline-offset-[5px] hover:underline">{children}</a>
@@ -45,7 +45,7 @@ const LanguageSwitch = ({ invertColors } : { invertColors: boolean }) => (
 interface MenuIconProps {
   expanded: boolean,
   onToggle: () => void,
-};
+}
 
 const MenuIcon = ({ expanded, onToggle }: MenuIconProps) => (
   <button className="lg:hidden order-3 ml-5" onClick={() => onToggle()}>

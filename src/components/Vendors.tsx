@@ -1,17 +1,12 @@
 import marshmallow from "@/assets/decorations/marshmallow.png";
-
 import { Title } from "@/components/Title";
-import { Floating } from "@/components/Floating";
-
 import { vendors } from "@/data/vendors";
-
-//<div className="mt-9 gap-3 grid grid-cols-4 grid-rows-2">
 
 interface Vendor {
   url: string,
   image: string,
   width?: number,
-};
+}
 
 const Vendor = ({ url, image, width }: Vendor) => (
   <a href={url} className="bg-white rounded-2xl px-3 min-w-[9.5rem] w-full h-24 lg:h-32 flex justify-center items-center hover:shadow-[0_8px_16px_0_rgba(119,101,169,0.15)]">
@@ -19,7 +14,6 @@ const Vendor = ({ url, image, width }: Vendor) => (
   </a>
 );
 
-// minmax(200px,1fr)
 export const Vendors = () => (
   <section id="vendors">
     <div className="container mt-[16rem]">

@@ -7,7 +7,7 @@ const Map = () => (
 interface AddressProps {
   type: string,
   content: string,
-};
+}
 
 const Address = ({ type, content }: AddressProps) => (
   <div>

@@ -7,7 +7,7 @@ interface Category {
   id: string,
   name: string,
   content: Item[],
-};
+}
 
 export const products: Array<Category> = [
   {

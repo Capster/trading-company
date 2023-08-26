@@ -1,6 +1,6 @@
 interface WaveProps {
   fill: string,
-};
+}
 
 export const WaveUp = ({ fill }: WaveProps) => (
   <div className="absolute w-full h-[4.5rem] lg:h-[9.375rem] overflow-hidden leading-[0] bottom-0 left-0">

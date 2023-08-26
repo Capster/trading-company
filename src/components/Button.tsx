@@ -4,7 +4,7 @@ interface ButtonProps {
   href: string,
   children: React.ReactNode,
   className?: string,
-};
+}
 
 export const Button = ({ href, children, className}: ButtonProps) => (
   <a

@@ -9,7 +9,7 @@ interface FloatingProps {
   right?: number,
   zIndex?: number,
   blur?: number,
-};
+}
 
 export const Floating = ({
     image,

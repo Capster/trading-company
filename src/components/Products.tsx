@@ -6,7 +6,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 interface ItemProps {
   name: string,
   image: string,
-};
+}
 
 const Item = ({ name, image }: ItemProps) => (
   <figure className="bg-white rounded-3 p-6 w-full flex-1 rounded-2xl flex flex-col justify-between">
@@ -18,7 +18,7 @@ const Item = ({ name, image }: ItemProps) => (
 interface TriggerProps {
   children: React.ReactNode,
   value: string,
-};
+}
 
 const Trigger = ({ children, value }: TriggerProps) => (
   <Tabs.Trigger

@@ -8,7 +8,7 @@ import { Title } from "@/components/Title";
 interface BenefitProps {
   text: string,
   image: string,
-};
+}
 
 const Benefit = ({ text, image }: BenefitProps) => (
   <figure className="bg-white p-6 flex-1 rounded-2xl flex flex-col justify-between">
