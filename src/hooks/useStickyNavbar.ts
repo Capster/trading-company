@@ -11,7 +11,7 @@ export const useStickyNavbar = (threshold: number): boolean => {
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  });
 
   return sticky;
 };
