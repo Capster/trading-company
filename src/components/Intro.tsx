@@ -22,7 +22,7 @@ export const Intro = () => {
         </a>
       </div>
       <div className="flex-1 relative flex justify-center">
-        <div className="bg-cover z-10 w-full max-w-[35.775rem] aspect-[1.09278]" style={{ backgroundImage: `url('${group}')` }}></div>
+        <div className="bg-contain bg-no-repeat z-10 w-full max-w-[35.775rem] aspect-[1.09278]" style={{ backgroundImage: `url('${group}')` }}></div>
       </div>
     </section>
   )
