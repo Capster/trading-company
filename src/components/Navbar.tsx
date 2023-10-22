@@ -2,28 +2,14 @@ import { cn } from "@/lib/utils";
 import { useStickyNavbar } from "@/hooks/useStickyNavbar";
 import { useMenu } from "@/hooks/useMenu";
 import logo from "@/assets/logo.png";
+import { useTranslation } from "react-i18next";
 
 const links = [
-  {
-    href: "#about",
-    text: "О компании",
-  },
-  {
-    href: "#products",
-    text: "Продукция",
-  },
-  {
-    href: "#benefits",
-    text: "Преимущества",
-  },
-  {
-    href: "#vendors",
-    text: "Наши клиенты",
-  },
-  {
-    href: "#contacts",
-    text: "Контакты",
-  },
+  "about",
+  "products",
+  "benefits",
+  "vendors",
+  "contacts",
 ];
 
 interface LinkProps {
@@ -35,12 +21,23 @@ const Link = ({ url, children }: LinkProps) => (
   <a href={url} className="decoration-2 underline-offset-[5px] hover:underline">{children}</a>
 );
 
-const LanguageSwitch = ({ invertColors } : { invertColors: boolean }) => (
-  <div className={cn("font-bold underline-offset-[5px] flex", invertColors ? "text-white" : "text-primary")}>
-    <button className="decoration-2 mr-1 underline">RU</button>
-    <button className="decoration-2 opacity-50">EN</button>
-  </div>
-);
+const LanguageSwitch = ({ invertColors } : { invertColors: boolean }) => {
+  const { i18n } = useTranslation();
+  const changeLanguage = (language: string) => i18n.changeLanguage(language);
+  const addButton = (language: string) => (
+    <button
+      onClick={() => changeLanguage(language)}
+      className={cn("decoration-2 mr-1 hover:opacity-75", i18n.language === language ? "underline" : "opacity-50")}
+    >{language.toUpperCase()}</button>
+  );
+
+  return (
+    <div className={cn("font-bold underline-offset-[5px] flex", invertColors ? "text-white" : "text-primary")}>
+      {addButton("ru")}
+      {addButton("en")}
+    </div>
+  )
+};
 
 interface MenuIconProps {
   expanded: boolean,
@@ -68,6 +65,7 @@ const MenuIcon = ({ expanded, onToggle }: MenuIconProps) => (
 export const Navbar = () => {
   const sticky = useStickyNavbar(32);
   const [expanded, toggleMenu] = useMenu();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -88,10 +86,10 @@ export const Navbar = () => {
             )}
           >
             {
-              links.map(({ href, text }, index) => (
+              links.map((link, index) => (
                 <ul key={index}>
                   <li>
-                    <Link url={href}>{text}</Link>
+                    <Link url={`#${link}`}>{t(`navigation.${link}`)}</Link>
                   </li>
                 </ul>
               ))

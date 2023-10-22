@@ -2,6 +2,7 @@ import { Title } from "@/components/Title";
 import { Button } from "@/components/Button";
 import { products } from "@/data/products"
 import * as Tabs from '@radix-ui/react-tabs';
+import { useTranslation } from "react-i18next";
 
 interface ItemProps {
   name: string,
@@ -35,38 +36,42 @@ const List = ({ children }: { children: React.ReactNode }) => (
   </Tabs.List>
 );
 
-export const Products = () => (
-  <section id="products">
-    <div className="container mt-36 md:mt-[16rem] flex flex-col gap-6">
-      <Title>Продукция</Title>
-      <Tabs.Root defaultValue={products.at(0)?.id}>
-        <div className="flex justify-between mb-6">
-          <List>
-            {
-              products.map(({ name, id }, index) => (
-                <Trigger key={index} value={id}>
-                  {name}
-                </Trigger>
-              ))
-            }
-          </List>
-          <Button href="/" className="z-20 hidden lg:block">В интернет-магазин</Button>
-        </div>
-        {
-          products.map(({ id, content }, index) => (
-            <Tabs.Content key={index} className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-6 empty:gap-0 md:grid-rows-1 md:grid-cols-4" value={id}>
+export const Products = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section id="products">
+      <div className="container mt-36 md:mt-[16rem] flex flex-col gap-6">
+        <Title>{t("products.title")}</Title>
+        <Tabs.Root defaultValue={products.at(0)?.id}>
+          <div className="flex justify-between mb-6">
+            <List>
               {
-                content.map(({ image, name }, index) => (
-                  <Item image={image} name={name} key={index} />
+                products.map(({ id }, index) => (
+                  <Trigger key={index} value={id}>
+                    {t(`products.categories.${id}`)}
+                  </Trigger>
                 ))
               }
-            </Tabs.Content>
-          ))
-        }
-      </Tabs.Root>
-      <div className="text-center">
-        <Button href="/" className="z-20 inline-block lg:hidden">В интернет-магазин</Button>
+            </List>
+            <Button href="/" className="z-20 hidden lg:block">{t("products.to_store")}</Button>
+          </div>
+          {
+            products.map(({ id, content }, index) => (
+              <Tabs.Content key={index} className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-6 empty:gap-0 md:grid-rows-1 md:grid-cols-4" value={id}>
+                {
+                  content.map((item, index) => (
+                    <Item image={`./products/${item}.png`} name={t(`products.items.${item}`)} key={index} />
+                  ))
+                }
+              </Tabs.Content>
+            ))
+          }
+        </Tabs.Root>
+        <div className="text-center">
+          <Button href="./" className="z-20 inline-block lg:hidden">{t("products.to_store")}</Button>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
