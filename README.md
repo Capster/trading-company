@@ -36,19 +36,10 @@ cd trading-company
 ```
 npm install
 ```
-or
-```
-yarn install
-```
-
 4. Start the development server:
 
 ```
-npm start
-```
-or
-```
-yarn start
+npm run dev
 ```
 
 5. Open your browser and visit `http://localhost:5173/trading-company/` to view the website.
