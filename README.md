@@ -2,6 +2,8 @@
 
 This is a sample website for a trading company, built using React, Vite, TypeScript, i18next and Tailwind CSS. This project has been created as a part of my portfolio to showcase my skills and expertise in web development.
 
+👉 Live Demo: [Live Demo](https://capster.github.io/trading-company/)
+
 ## Features
 
 - Utilizes React for efficient component-based development.
