@@ -12,15 +12,6 @@ const links = [
   "contacts",
 ];
 
-interface LinkProps {
-  url: string,
-  children: React.ReactNode,
-}
-
-const Link = ({ url, children }: LinkProps) => (
-  <a href={url} className="decoration-2 underline-offset-[5px] hover:underline">{children}</a>
-);
-
 const LanguageSwitch = ({ invertColors } : { invertColors: boolean }) => {
   const { i18n } = useTranslation();
   const changeLanguage = (language: string) => i18n.changeLanguage(language);
@@ -67,6 +58,18 @@ export const Navbar = () => {
   const [expanded, toggleMenu] = useMenu();
   const { t } = useTranslation();
 
+  const navbarLinks = links.map((link, index) => (
+    <ul key={index}>
+      <li>
+        <a
+          href={`#${link}`}
+          onClick={() => expanded && toggleMenu()}
+          className="decoration-2 underline-offset-[5px] hover:underline"
+        >{t(`navigation.${link}`)}</a>
+      </li>
+    </ul>
+  ));
+
   return (
     <>
       <div className={cn(sticky && "h-32")}></div>
@@ -78,23 +81,13 @@ export const Navbar = () => {
       >
         <div className="container mx-auto h-full flex items-center justify-between">
           <div className="order-none z-50">
-            <Link url="/"><img src={logo} className={cn("w-28", expanded && "brightness-0 invert")}/></Link>
+            <a href="/"><img src={logo} className={cn("w-28", expanded && "brightness-0 invert")}/></a>
           </div>
           <nav className={cn(
             "z-40 flex-col gap-8 top-0 left-0 w-full h-screen text-2xl transition-colors bg-primary text-white justify-center items-center lg:flex lg:w-auto lg:h-auto lg:text-base lg:gap-12 flex lg:flex-row lg:bg-transparent lg:text-primary",
               expanded ? "fixed" : "hidden",
             )}
-          >
-            {
-              links.map((link, index) => (
-                <ul key={index}>
-                  <li>
-                    <Link url={`#${link}`}>{t(`navigation.${link}`)}</Link>
-                  </li>
-                </ul>
-              ))
-            }
-          </nav>
+          >{navbarLinks}</nav>
           <div className="flex z-50 order-2">
             <LanguageSwitch invertColors={expanded} />
             <MenuIcon expanded={expanded} onToggle={toggleMenu}/>

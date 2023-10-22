@@ -42,38 +42,41 @@ export const Products = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="products">
-      <div className="container mt-36 md:mt-[16rem] flex flex-col gap-6">
-        <Title>{t("products.title")}</Title>
-        <Tabs.Root defaultValue={products.at(0)?.id}>
-          <div className="flex justify-between mb-6">
-            <List>
-              {
-                products.map(({ id }, index) => (
-                  <Trigger key={index} value={id}>
-                    {t(`products.categories.${id}`)}
-                  </Trigger>
-                ))
-              }
-            </List>
-            <Button href="./" className="z-20 hidden lg:block">{t("products.to_store")}</Button>
-          </div>
-          {
-            products.map(({ id, content }, index) => (
-              <Tabs.Content key={index} className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-6 empty:gap-0 md:grid-rows-1 md:grid-cols-4" value={id}>
+    <>
+      <div id="products"></div>
+      <section>
+        <div className="container mt-36 md:mt-[16rem] flex flex-col gap-6">
+          <Title>{t("products.title")}</Title>
+          <Tabs.Root defaultValue={products.at(0)?.id}>
+            <div className="flex justify-between mb-6">
+              <List>
                 {
-                  content.map((item, index) => (
-                    <Item image={`./products/${item}.png`} name={t(`products.items.${item}`)} key={index} />
+                  products.map(({ id }, index) => (
+                    <Trigger key={index} value={id}>
+                      {t(`products.categories.${id}`)}
+                    </Trigger>
                   ))
                 }
-              </Tabs.Content>
-            ))
-          }
-        </Tabs.Root>
-        <div className="text-center">
-          <Button href="./" className="z-20 inline-block lg:hidden">{t("products.to_store")}</Button>
+              </List>
+              <Button href="./" className="z-20 hidden lg:block">{t("products.to_store")}</Button>
+            </div>
+            {
+              products.map(({ id, content }, index) => (
+                <Tabs.Content key={index} className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-6 empty:gap-0 md:grid-rows-1 md:grid-cols-4" value={id}>
+                  {
+                    content.map((item, index) => (
+                      <Item image={`./products/${item}.png`} name={t(`products.items.${item}`)} key={index} />
+                    ))
+                  }
+                </Tabs.Content>
+              ))
+            }
+          </Tabs.Root>
+          <div className="text-center">
+            <Button href="./" className="z-20 inline-block lg:hidden">{t("products.to_store")}</Button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
