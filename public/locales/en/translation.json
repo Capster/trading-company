@@ -1,0 +1,65 @@
+{
+  "navigation": {
+    "about": "About",
+    "products": "Products",
+    "benefits": "Benefits",
+    "vendors": "Vendors",
+    "contacts": "Contacts"
+  },
+  "intro": {
+    "title": "Trading Company Official Page",
+    "description": "Providing superior quality food products from Asia since 2015",
+    "learn_more": "Learn more"
+  },
+  "about": {
+    "title": "About us",
+    "description": "Founded in 2015, Russian Trading Company has great potential and reliable reputation.\n\n We are the exclusive supplier of Gummi Zone, Gold Kili, Fun Bites, Corniche brands in Russia. We are proud of our unique partners and brands that use all the most natural ingredients and high quality standards. We constantly strive to offer the best for our consumers. We currently cooperate with leading distribution companies in most regions of Russia and have contracts with local and federal chains.",
+    "slogan": "We build relationships with our partners on the basis of mutual benefit, honesty, responsibility and discipline!"
+  },
+  "products": {
+    "title": "Products",
+    "to_store": "Go to store",
+    "categories": {
+      "drinks": "Drinks",
+      "marshmallow": "Marshmallow",
+      "candys": "Candys"
+    },
+    "items": {
+      "matcha-latte-with-ginger": "Matcha Late Gold Kili with Ginger",
+      "ginger-tea-latte": "Ginger Tea Latte Gold Kili with Honey",
+      "matcha-latte": "Matcha Latte Gold Kili",
+      "ginger-bag": "Natural Ginger Bag Gold Kili",
+      "corniche-snow-white": "Corniche Snow White Mega Marshmallows",
+      "corniche-mango": "Corniche Mango Mega Marshmallows",
+      "corniche-mini": "Corniche Flamable Mini Marshmallows",
+      "corniche-jelly": "Corniche Fluffy Jelly Marshmallows",
+      "gummi-doggie": "Gummi Zone Gummy Doggie",
+      "funbites-mango": "Funbites Turmeric Ginger Chewy Candy Mango",
+      "gummi-burger": "Gummi Zone Gummy Burger",
+      "funbites-orange": "Funbites Turmeric Ginger Chewy Candy Orange"
+    }
+  },
+  "benefits": {
+    "title": "Benefits",
+    "benefit1": "We only partner with trusted brands and companies that offer high quality products that are fully certified to advanced standards.",
+    "benefit2": "All our products are absolutely safe and have international certificates such as Halal, ISO, HACCP, EAC.",
+    "benefit3": "Our products are non-GMO."
+  },
+  "vendors": {
+    "title": "Vendors"
+  },
+  "contacts": {
+    "company_name": "Trading Company Inc.",
+    "legal_address": {
+      "type": "Legal Address:",
+      "address": "109428, Moscow, Mikhailova St., 4A, floor 3, office 308"
+    },
+    "physical_address": {
+      "type": "Physical Address:",
+      "address": "119049, Moscow, Koroviy Val str., 5, floor 5 office 511"
+    }
+  },
+  "footer": {
+    "legal_name": "© 2023 Trading Company Inc. All Rights Reserved."
+  }
+}
