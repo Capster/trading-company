@@ -56,7 +56,7 @@ export const Products = () => {
                 ))
               }
             </List>
-            <Button href="/" className="z-20 hidden lg:block">{t("products.to_store")}</Button>
+            <Button href="./" className="z-20 hidden lg:block">{t("products.to_store")}</Button>
           </div>
           {
             products.map(({ id, content }, index) => (

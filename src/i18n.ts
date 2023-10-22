@@ -8,8 +8,11 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'ru',
+    fallbackLng: "ru",
     debug: true,
+    backend: {
+      loadPath: "/trading-company/locales/{{lng}}/{{ns}}.json",
+    }
   });
 
 export default i18n;
