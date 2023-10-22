@@ -31,9 +31,11 @@ const Trigger = ({ children, value }: TriggerProps) => (
 );
 
 const List = ({ children }: { children: React.ReactNode }) => (
-  <Tabs.List className="rounded-full p-1 gap-1 bg-[rgba(112,64,244,0.10)] flex justify-between w-min">
-    {children}
-  </Tabs.List>
+  <div className="overflow-scroll">
+    <Tabs.List className="rounded-full p-1 gap-1 bg-[rgba(112,64,244,0.10)] flex justify-between w-min">
+      {children}
+    </Tabs.List>
+  </div>
 );
 
 export const Products = () => {
