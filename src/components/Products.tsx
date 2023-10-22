@@ -31,7 +31,7 @@ const Trigger = ({ children, value }: TriggerProps) => (
 );
 
 const List = ({ children }: { children: React.ReactNode }) => (
-  <div className="overflow-scroll">
+  <div className="overflow-scroll no-scrollbar">
     <Tabs.List className="rounded-full p-1 gap-1 bg-[rgba(112,64,244,0.10)] flex justify-between w-min">
       {children}
     </Tabs.List>
